@@ -9,11 +9,21 @@ using namespace std;
 
 //this header file will have the function to login as an admin
 
+string passwordattempt;
+string password = "testpassword";
+
 bool Student::adminLogin()
 {
+	system("cls");
+	cout << "Admin password: ";
+	cin >> passwordattempt;
 
-	return true;
-
+	if (passwordattempt == password)
+	{
+		return true;
+	}
+	else
+		return false;
 }
 
 #endif
