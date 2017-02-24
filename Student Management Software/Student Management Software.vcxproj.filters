@@ -38,5 +38,13 @@
     <ClInclude Include="adminLogin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="studentclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test.csv">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -154,7 +154,11 @@
     <ClInclude Include="modifyStudent.h" />
     <ClInclude Include="newStudent.h" />
     <ClInclude Include="searchStudent.h" />
+    <ClInclude Include="studentclass.h" />
     <ClInclude Include="viewStudents.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

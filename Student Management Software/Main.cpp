@@ -1,5 +1,6 @@
 /*CS 3420 Project
 
+
 Shell portion.
 Needed Functions (as headers)
 
@@ -8,7 +9,14 @@ Needed Functions (as headers)
 - delete student  (Nhu)
 - search student (Jon)
 - view all students (Ali)
-- log in as admin (Ali)
+- log in as admin (Jon)
+
+Modify the .h file with the corresponding function assigned to you. Use the test.csv file to test your functions if you
+have a function that would use a database. If you have a module that would need to modify the student class or this main.cpp file,
+make a pull request so that we can make sure it will work.
+
+Remember, we build this part first as if it is our actual program, then we
+develop the real modules after.
 
 */
 
@@ -20,9 +28,8 @@ using namespace std;
 #include <fstream>
 #include <vector>
 
-//create a stream to the csv file for testing
-
-ifstream database("testDatabase.csv");
+//create a stream to the csv file for testing (this is the included resource file, test.csv)
+ifstream database("test.csv");
 
 //include our headers
 #include "newStudent.h"
@@ -32,36 +39,48 @@ ifstream database("testDatabase.csv");
 #include "viewStudents.h"
 #include "adminLogin.h"
 
-//no private members because this is just a shell, security is not important here
-class Student {
+//include the student class (is it's own header file)
+#include "studentclass.h"
 
-public:
-
-	//member variables
-
-	string lastName, firstName, username;
-	unsigned long studentID;
-	vector <string> classes, classGrades;
-	double GPA;
-
-	//member functions (will be defined in headers but placed here)
-
-	bool adminLogin();
-	bool deleteStudent(const unsigned long studentID);
-	bool modifyStudent(const unsigned long studentID);
-	bool newStudent();
-	Student searchStudent(const unsigned long studentID);
-	vector<Student> viewStudents();
-
-};
-
-//program begin
+int choice = 0;
 
 int main()
 
 {
 
-	//i will add a menu here
+	cout << "Student Records Management System (SRMS)" << endl;
+	cout << "[READ ONLY] - LOGIN AS ADMIN TO MODIFY RECORDS" << endl;
+	cout << "\nWelcome, please choose an option." << endl;
+	cout << "1. Login as Admin" << endl;
+	cout << "2. Search for Student" << endl;
+	cout << "3. View all Student Records" << endl;
+	cout << "4. Exit" << endl;
+	cout << "\nChoice: ";
+	cin >> choice;
+
+
+	//other options will be created as part of the adminLogin part of this shell, they would only appear if the admin logged in
+
+	
+	//data validation with while loop
+
+	while (choice < 1 || choice >4)
+	{
+		cout << "Student Records Management System (SRMS)" << endl;
+		cout << "[READ ONLY] - LOGIN AS ADMIN TO MODIFY RECORDS" << endl;
+		cout << "\nWelcome, please choose an option." << endl;
+		cout << "1. Login as Admin" << endl;
+		cout << "2. Search for Student" << endl;
+		cout << "3. View all Student Records" << endl;
+		cout << "4. Exit" << endl;
+		cout << "\nChoice: ";
+		cin >> choice;
+	}
+
+	if (choice == 4)
+	{
+		return 0;
+	}
 
 	return 0;
 }
