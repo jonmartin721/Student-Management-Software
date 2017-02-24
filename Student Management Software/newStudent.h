@@ -1,5 +1,5 @@
-#ifndef NEWSTUDENT_H
-#define NEWSTUDENT_H
+#ifndef NEWSTUDENT
+#define NEWSTUDENT
 #pragma once
 
 using namespace std;
@@ -9,7 +9,7 @@ using namespace std;
 
 //this header file will have the definition of a function to create a new student record
 
-bool Student::newStudent()
+bool newStudent()
 {
 
 	return true;

@@ -1,5 +1,5 @@
-#ifndef VIEWSTUDENTS_H
-#define VIEWSTUDENTS_H
+#ifndef VIEWSTUDENTS
+#define VIEWSTUDENTS
 #pragma once
 
 using namespace std;
@@ -10,15 +10,15 @@ using namespace std;
 //this header file will have the definition of a function to modify a student record
 
 //instantiate a default Student (w/ default constructor)
-Student basicStudent;
-//instantiate a default vector to return student records
+Student default2;
+//instantiate a vector to return student records
 vector<Student> allStudents;
 
 
-vector<Student> Student::viewStudents()
+vector<Student> viewStudents()
 {
 
-	allStudents.push_back(basicStudent);
+	allStudents.push_back(default2);
 	return allStudents;
 }
 

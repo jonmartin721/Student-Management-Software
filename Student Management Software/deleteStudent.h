@@ -1,5 +1,5 @@
-#ifndef DELETESTUDENT_H
-#define DELETESTUDENT_H
+#ifndef DELETESTUDENT
+#define DELETESTUDENT
 #pragma once
 
 using namespace std;
@@ -10,7 +10,7 @@ using namespace std;
 //this header file will have the function to delete a student, it is passed the student
 //ID as a parameter
 
-bool Student::deleteStudent(unsigned long studentID)
+bool deleteStudent(unsigned long studentID)
 {
 
 	return true;

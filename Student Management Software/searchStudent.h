@@ -1,5 +1,5 @@
-#ifndef SEARCHSTUDENTS_H
-#define SEARCHSTUDENTS_H
+#ifndef SEARCHSTUDENTS
+#define SEARCHSTUDENTS
 #pragma once
 
 using namespace std;
@@ -12,7 +12,7 @@ using namespace std;
 //instantiate a default Student (w/ default constructor)
 Student default;
 
-Student Student::searchStudent(unsigned long studentID)
+Student searchStudent(unsigned long studentID)
 {
 
 	return default;

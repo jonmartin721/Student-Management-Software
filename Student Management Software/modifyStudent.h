@@ -1,5 +1,5 @@
-#ifndef MODIFYSTUDENTS_H
-#define MODIFYSTUDENTS_H
+#ifndef MODIFYSTUDENTS
+#define MODIFYSTUDENTS
 #pragma once
 
 using namespace std;
@@ -9,7 +9,7 @@ using namespace std;
 
 //this header file will have the definition of a function to modify a student record
 
-bool Student::modifyStudent(unsigned long studentID)
+bool modifyStudent(unsigned long studentID)
 {
 	
 	return true;
