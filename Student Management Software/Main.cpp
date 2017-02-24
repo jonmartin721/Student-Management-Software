@@ -17,7 +17,7 @@ have a function that would use a database. If you have a module that would need 
 make a pull request so that we can make sure it will work.
 
 Remember, we build this part first as if it is our actual program, then we
-develop the real modules after.
+develop the real modules after and incorporate them.
 
 */
 
@@ -45,11 +45,15 @@ ifstream database("test.csv");
 #include "studentclass.h"
 
 //initialize some variables to help with the menu
-int choice = 0;		//by default they choose 0
-bool exitflag = false;
+int choice = 0;			//by default they choose 0
+bool exitflag = false;	//this is a flag that is triggered when the user wants to exit from the admin menu
 
 //prototype adminmenu function from adminLogin.h
 void adminmenu();
+bool deleteStudent(const unsigned long studentID);
+bool modifyStudent(const unsigned long studentID);
+bool newStudent();
+Student searchStudent(const unsigned long studentID);
 
 int main()
 {
@@ -106,12 +110,12 @@ int main()
 
 	else if (choice == 2) //if they choose to search for a student
 	{
-		
+		//Jon creates this function call and defines the function in searchStudent.h
 	}
 
 	else if (choice == 3) //if they choose to view all student records
 	{
-
+		//Ali creates this function call and defines the function in viewStudents.h
 	}
 
 	else if (choice == 4) //if they choose to Exit SRMS
@@ -187,17 +191,17 @@ void adminmenu()
 
 	else if (choice == 5) //if they choose to delete a student record
 	{
-
+		//Nhu creates this function call and defines the function in deleteStudent.h
 	}
 
 	else if (choice == 6) //if they choose to modify a student record
 	{
-
+		//Yuntian creates this function call and defines the function in modifyStudent.h
 	}
 
 	else if (choice == 7) //if they choose to create a new student record
 	{
-
+		//Javier creates this function call and defines the function in newStudent.h
 	}
 
 	return;

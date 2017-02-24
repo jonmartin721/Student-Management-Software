@@ -1,5 +1,5 @@
-#ifndef ADMINLOGIN_H
-#define ADMINLOGIN_H
+#ifndef ADMINLOGIN
+#define ADMINLOGIN
 #pragma once
 
 //this is a test and now I'm adding more text
@@ -19,7 +19,7 @@ int attempts = 0;					//password attempts
 bool adminLogin()
 {
 	system("cls");
-	cout << "Type 'Exit SRMS' to go back to read-only menu" << endl;
+	cout << "Type 'Exit' to go back to read-only menu" << endl;
 	cout << "Attempts left: " << 3 - attempts << endl;
 	cout << "\nAdmin password? ";
 	cin.ignore();

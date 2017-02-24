@@ -1,11 +1,14 @@
-#ifndef STUDENTCLASS_H
-#define STUDENTCLASS_H
+#ifndef STUDENTCLASS
+#define STUDENTCLASS
 #pragma once
 
 using namespace std;
 
 #include <string>
 #include <vector>
+
+//this is not like the other header files, this has the student class in it.
+//This doesn't need be to changed unless there is a structural problem.
 
 class Student {
 
@@ -17,15 +20,6 @@ public:
 	unsigned long studentID;
 	vector <string> classes, classGrades;
 	float GPA;
-
-	//member functions (will be defined in headers but placed here as a placeholder)
-
-	bool deleteStudent(const unsigned long studentID);
-	bool modifyStudent(const unsigned long studentID);
-	bool newStudent();
-	Student searchStudent(const unsigned long studentID);
-	vector<Student> viewStudents();
-
 
 	//default constructor
 
