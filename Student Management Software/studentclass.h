@@ -20,7 +20,6 @@ public:
 
 	//member functions (will be defined in headers but placed here as a placeholder)
 
-	bool adminLogin();
 	bool deleteStudent(const unsigned long studentID);
 	bool modifyStudent(const unsigned long studentID);
 	bool newStudent();
