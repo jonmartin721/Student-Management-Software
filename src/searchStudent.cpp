@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Student searchStudent(unsigned long studentID)
+Student searchStudent()
 {
 	UNIMPLEMENTED;
 	Student default;

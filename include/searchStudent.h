@@ -2,4 +2,4 @@
 
 #include "stdafx.h"
 
-Student searchStudent(unsigned long studentID);
+Student searchStudent();
