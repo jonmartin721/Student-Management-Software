@@ -18,6 +18,25 @@
 #include "viewStudents.h"
 #include "adminLogin.h"
 
+typedef enum
+{
+	GUEST,
+	USER,
+	ADMIN,
+}SRMS_USER_TOKEN, *LPSRMS_USER_TOKEN;
+
+typedef enum
+{
+	EXIT,
+	LOGIN,
+	LOGOUT,
+	SEARCH_STUDENT,
+	VIEW_ALL_RECORD,
+	NEW_STUDENT,
+	DELETE_STUDENT,
+	MODIFY_STUDENT,
+}SRMS_OPERATION, *LPSRMS_OPERATION;
+
 #ifdef _DEBUG
 #define DPRINT(s) std::cout << s << std::endl;
 #else
