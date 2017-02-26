@@ -1,7 +1,4 @@
-#ifndef DELETESTUDENT
-#define DELETESTUDENT
 #pragma once
+#include "stdafx.h"
 
 bool deleteStudent(unsigned long studentID);
-
-#endif

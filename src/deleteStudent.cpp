@@ -1,7 +1,4 @@
-#include "deleteStudent.h"
-#include <string>
-#include <vector>
-#include "studentclass.h"
+#include "stdafx.h"
 
 using namespace std;
 
