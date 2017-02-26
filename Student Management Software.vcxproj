@@ -18,6 +18,28 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\adminLogin.h" />
+    <ClInclude Include="include\deleteStudent.h" />
+    <ClInclude Include="include\modifyStudent.h" />
+    <ClInclude Include="include\newStudent.h" />
+    <ClInclude Include="include\searchStudent.h" />
+    <ClInclude Include="include\studentClass.h" />
+    <ClInclude Include="include\viewStudents.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\adminLogin.cpp" />
+    <ClCompile Include="src\deleteStudent.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\modifyStudent.cpp" />
+    <ClCompile Include="src\newStudent.cpp" />
+    <ClCompile Include="src\searchStudent.cpp" />
+    <ClCompile Include="src\studentClass.cpp" />
+    <ClCompile Include="src\viewStudents.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3D10C2AC-920F-4A50-B472-7DB7B80A5F7A}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -71,15 +93,27 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)\Include;$(IncludePath)</IncludePath>
+    <OutDir>$(ProjectDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)\obj\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)\Include;$(IncludePath)</IncludePath>
+    <OutDir>$(ProjectDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)\obj\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)\Include;$(IncludePath)</IncludePath>
+    <OutDir>$(ProjectDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)\obj\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)\Include;$(IncludePath)</IncludePath>
+    <OutDir>$(ProjectDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)\obj\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -145,27 +179,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="adminLogin.cpp" />
-    <ClCompile Include="deleteStudent.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="modifyStudent.cpp" />
-    <ClCompile Include="newStudent.cpp" />
-    <ClCompile Include="searchStudent.cpp" />
-    <ClCompile Include="viewStudents.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="adminLogin.h" />
-    <ClInclude Include="deleteStudent.h" />
-    <ClInclude Include="modifyStudent.h" />
-    <ClInclude Include="newStudent.h" />
-    <ClInclude Include="searchStudent.h" />
-    <ClInclude Include="studentclass.h" />
-    <ClInclude Include="viewStudents.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="test.csv" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

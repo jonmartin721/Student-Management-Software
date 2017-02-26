@@ -15,48 +15,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="adminLogin.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deleteStudent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="modifyStudent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="newStudent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="searchStudent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="viewStudents.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="newStudent.h">
+    <ClInclude Include="include\adminLogin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="modifyStudent.h">
+    <ClInclude Include="include\deleteStudent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="deleteStudent.h">
+    <ClInclude Include="include\modifyStudent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="searchStudent.h">
+    <ClInclude Include="include\newStudent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="viewStudents.h">
+    <ClInclude Include="include\searchStudent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="adminLogin.h">
+    <ClInclude Include="include\viewStudents.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="studentclass.h">
+    <ClInclude Include="include\studentClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -64,5 +41,31 @@
     <None Include="test.csv">
       <Filter>Resource Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\adminLogin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deleteStudent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\modifyStudent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\newStudent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\searchStudent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\viewStudents.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\studentClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
