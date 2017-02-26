@@ -17,3 +17,12 @@
 #include "searchStudent.h"
 #include "viewStudents.h"
 #include "adminLogin.h"
+
+#ifdef _DEBUG
+#define DPRINT(s) std::cout << s << std::endl;
+#else
+#define DPRINT(s)
+#endif
+
+#define UNIMPLEMENTED DPRINT(__func__ ## " is umimplemented.")
+#define FIXME(s) DPRINT("FIXME: " ## s)
