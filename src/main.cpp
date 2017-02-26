@@ -43,6 +43,7 @@ using namespace std;
 //initialize some variables to help with the menu
 int choice = 0;			//by default they choose 0
 bool exitFlag = false;	//this is a flag that is triggered when the user wants to exit from the admin menu
+bool admin;
 
 int main()
 {
