@@ -7,6 +7,8 @@
 #include <vector>
 #include <string>
 
+//include the student class (is it's own header file)
+
 //include our headers, one for each function
 #include "newStudent.h"
 #include "modifyStudent.h"
@@ -14,6 +16,3 @@
 #include "searchStudent.h"
 #include "viewStudents.h"
 #include "adminLogin.h"
-
-//include the student class (is it's own header file)
-#include "studentclass.h"
