@@ -1,8 +1,4 @@
-using namespace std;
-#include <string>
-#include <vector>
-#include "studentclass.h"
-#include "searchStudent.h"
+#include "stdafx.h"
 
 using namespace std;
 

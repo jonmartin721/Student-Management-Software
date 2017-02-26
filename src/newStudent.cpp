@@ -1,7 +1,4 @@
-#include <string>
-#include <vector>
-#include "studentclass.h"
-#include "newStudent.h"
+#include "stdafx.h"
 
 using namespace std;
 

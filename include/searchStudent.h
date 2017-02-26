@@ -1,9 +1,5 @@
-#ifndef SEARCHSTUDENTS
-#define SEARCHSTUDENTS
 #pragma once
 
-#include "studentclass.h"
+#include "stdafx.h"
 
 Student searchStudent(unsigned long studentID);
-
-#endif

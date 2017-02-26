@@ -1,8 +1,6 @@
+#include "stdafx.h"
+
 using namespace std;
-#include <string>
-#include <vector>
-#include "studentclass.h"
-#include "viewStudents.h"
 
 //this header file will have the definition of a function to modify a student record
 

@@ -1,7 +1,4 @@
-#ifndef NEWSTUDENT
-#define NEWSTUDENT
 #pragma once
+#include "stdafx.h"
 
 bool newStudent();
-
-#endif

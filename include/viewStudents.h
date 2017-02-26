@@ -1,7 +1,4 @@
-#ifndef VIEWSTUDENTS
-#define VIEWSTUDENTS
 #pragma once
+#include "stdafx.h"
 
 vector<Student> viewStudents();
-
-#endif
