@@ -25,160 +25,153 @@ develop the real modules after and incorporate them into this shell.
 
 using namespace std;
 
-//initialize some variables to help with the menu
-int choice = 0;			//by default they choose 0
-bool exitFlag = false;	//this is a flag that is triggered when the user wants to exit from the admin menu
-bool admin;
-
-int main()
+SRMS_OPERATION displayGuestMenu()
 {
-	if (exitFlag == true) //if they wanted to exit from admin menu
+	int option = 0;
+	while (true)
 	{
-		return 0;
-	}
-
-	system("cls");
-	choice = 0;
-	cout << "Student Records Management System (SRMS)" << endl;
-	cout << "[READ ONLY] - LOGIN AS ADMIN TO MODIFY RECORDS" << endl;
-	cout << "\nWelcome User, please choose an option." << endl;
-	cout << "1. Login as Admin" << endl;
-	cout << "2. Search for Student" << endl;
-	cout << "3. View all Student Records" << endl;
-	cout << "4. Exit SRMS" << endl;
-	cout << "\nChoice: ";
-	cin >> choice;
-
-
-	//data validation with while loop
-
-	while (choice < 1 || choice > 4)
-	{
-		cout << "Student Records Management System (SRMS)" << endl;
-		cout << "[READ ONLY] - LOGIN AS ADMIN TO MODIFY RECORDS" << endl;
-		cout << "\nWelcome User, please choose an option." << endl;
+		cout << "Welcome User, please choose an option." << endl;
 		cout << "1. Login as Admin" << endl;
 		cout << "2. Search for Student" << endl;
 		cout << "3. View all Student Records" << endl;
-		cout << "4. Exit SRMS" << endl;
-		cout << "\nChoice: ";
-		cin >> choice;
-	}
+		cout << "0. Exit" << endl;
+		cout << "Choice: ";
+		cin >> option;
 
-	//start analyzing choices after validation passes
-
-	if (choice == 1)		//if they choose to login as admin
-	{
-		admin = adminLogin();	//go to the adminLogin() function
-
-		if (admin == true)		//if they got the password right
+		switch (option)
 		{
-			adminmenu();		//take them to the full menu
+		case 1:
+			return LOGIN;
+		case 2:
+			return SEARCH_STUDENT;
+		case 3:
+			return VIEW_ALL_RECORD;
+		case 0:
+			return EXIT;
+		default:
+			cout << "Invalid choice." << endl;
 		}
-
-		else					//if they did not the password right
-		{
-			main();				//take them back to read-only menu
-		}
-
 	}
-
-	else if (choice == 2) //if they choose to search for a student
-	{
-		//Jon creates this function call and defines the function in searchStudent.h
-	}
-
-	else if (choice == 3) //if they choose to view all student records
-	{
-		//Ali creates this function call and defines the function in viewStudents.h
-	}
-
-	else if (choice == 4) //if they choose to Exit SRMS
-	{
-		return 0;				//Exit SRMS
-	}
-
-	main();
 }
 
-//admin version of the menu with extra options
-void adminmenu()
+SRMS_OPERATION displayAdminMenu()
 {
-	system("cls");
-
-	choice = 0;
-	cout << "Student Records Management System (SRMS)" << endl;
-	cout << "[FULL ACCESS] - LOGGED IN AS ADMIN" << endl;
-	cout << "\nWelcome Admin, please choose an option." << endl;
-	cout << "1. Logout of Admin" << endl;
-	cout << "2. Search for Student" << endl;
-	cout << "3. View all Student Records" << endl;
-	cout << "4. Exit SRMS" << endl;
-	cout << "\nAdmin Only Functions:" << endl;
-	cout << "5. Delete Student" << endl;
-	cout << "6. Modify Student" << endl;
-	cout << "7. New Student" << endl;
-	cout << "\nChoice: ";
-	cin >> choice;
-
-	//data validation
-	while (choice < 1 || choice > 7)
+	int option = 0;
+	while (true)
 	{
-		cout << "Student Records Management System (SRMS)" << endl;
-		cout << "[FULL ACCESS] - LOGGED IN AS ADMIN" << endl;
-		cout << "\nWelcome Admin, please choose an option." << endl;
+		cout << "Welcome Admin, please choose an option." << endl;
 		cout << "1. Logout of Admin" << endl;
 		cout << "2. Search for Student" << endl;
 		cout << "3. View all Student Records" << endl;
-		cout << "4. Exit SRMS" << endl;
-		cout << "\nAdmin Only Functions:" << endl;
-		cout << "5. Delete Student" << endl;
-		cout << "6. Modify Student" << endl;
-		cout << "7. New Student" << endl;
-		cout << "\nChoice: ";
-		cin >> choice;
+		cout << "4. Delete Student" << endl;
+		cout << "5. Modify Student" << endl;
+		cout << "6. New Student" << endl;
+		cout << "0. Exit SRMS" << endl;
+		cout << "Choice: ";
+		cin >> option;
+
+		switch (option)
+		{
+		case 1:
+			return LOGOUT;
+		case 2:
+			return SEARCH_STUDENT;
+		case 3:
+			return VIEW_ALL_RECORD;
+		case 4:
+			return DELETE_STUDENT;
+		case 5:
+			return MODIFY_STUDENT;
+		case 6:
+			return NEW_STUDENT;
+		case 0:
+			return EXIT;
+		default:
+			cout << "Invalid choice." << endl;
+		}
 	}
+}
 
-	//start analyzing choices after validation check
-
-	if (choice == 1)		//if they choose to logout from admin
+SRMS_OPERATION displayMenu(LPSRMS_USER_TOKEN lpToken)
+{
+	cout << "Student Records Management System" << endl;
+	switch (*lpToken)
 	{
-		admin = false;		//set them as a normal user
-		main();				//go back to the main read-only menu
-
-	}
-
-	else if (choice == 2) //if they choose to search for a student
+	case GUEST:
+	case USER:
 	{
-
+		cout << "[READ ONLY] - LOGIN AS ADMIN TO MODIFY RECORDS" << endl;
+		return displayGuestMenu();
 	}
-
-	else if (choice == 3) //if they choose to view all student records
+	case ADMIN:
 	{
-
+		cout << "[FULL ACCESS] - LOGGED IN AS ADMIN" << endl;
+		return displayAdminMenu();
 	}
-
-	else if (choice == 4) //if they choose to Exit SRMS
+	default:
 	{
-		exitFlag = true;
-		main();			//Exit SRMS
+		cout << "Invalid user token." << endl;
+		return EXIT;
 	}
+	}
+}
 
-	else if (choice == 5) //if they choose to delete a student record
+int main()
+{
+	SRMS_USER_TOKEN Token = GUEST;
+
+	while (true)
 	{
-		//Nhu creates this function call and defines the function in deleteStudent.h
+		switch (displayMenu(&Token))
+		{
+		case LOGIN:
+		{
+			if (adminLogin()) Token = ADMIN;
+			break;
+		}
+		case LOGOUT:
+		{
+			Token = GUEST;
+			break;
+		}
+		case SEARCH_STUDENT:
+		{
+			//Jon creates this function call and defines the function in searchStudent.h
+			searchStudent();
+			break;
+		}
+		case VIEW_ALL_RECORD:
+		{
+			//Ali creates this function call and defines the function in viewStudents.h
+			viewStudents();
+			break;
+		}
+
+		case NEW_STUDENT:
+		{
+			//Javier creates this function call and defines the function in newStudent.h
+			newStudent();
+			break;
+		}
+		case DELETE_STUDENT:
+		{
+			//Nhu creates this function call and defines the function in deleteStudent.h
+			deleteStudent();
+			break;
+		}
+
+		case MODIFY_STUDENT:
+		{
+			//Yuntian creates this function call and defines the function in modifyStudent.h
+			modifyStudent();
+			break;
+		}
+		case EXIT:
+		{
+			return 0;	//Exit SRMS
+		}
+		}
+
+		cout << endl;
 	}
-
-	else if (choice == 6) //if they choose to modify a student record
-	{
-		//Yuntian creates this function call and defines the function in modifyStudent.h
-	}
-
-	else if (choice == 7) //if they choose to create a new student record
-	{
-		//Javier creates this function call and defines the function in newStudent.h
-	}
-
-	return;
-
 }
