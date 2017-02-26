@@ -1,5 +1,3 @@
-#ifndef ADMINLOGIN
-#define ADMINLOGIN
 #pragma once
 
 #include "stdafx.h"
@@ -12,5 +10,3 @@ bool deleteStudent(const unsigned long studentID);
 bool modifyStudent(const unsigned long studentID);
 bool newStudent();
 Student searchStudent(const unsigned long studentID);
-
-#endif

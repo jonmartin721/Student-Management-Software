@@ -1,8 +1,4 @@
-#include "adminLogin.h"
-#include "studentclass.h"
-#include <string>
-#include <vector>
-#include <iostream>
+#include "stdafx.h"
 
 //this cpp file has the adminLogin function in it
 

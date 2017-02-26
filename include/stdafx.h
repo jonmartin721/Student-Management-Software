@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <fstream>
 #include <vector>
+#include <string>
 
 //include our headers, one for each function
 #include "newStudent.h"
