@@ -24,5 +24,5 @@
 #define DPRINT(s)
 #endif
 
-#define UNIMPLEMENTED DPRINT(__func__ ## " is umimplemented.")
-#define FIXME(s) DPRINT("FIXME: " ## s)
+#define UNIMPLEMENTED DPRINT(__func__ << " is umimplemented.")
+#define FIXME(s) DPRINT("FIXME: " << s)
