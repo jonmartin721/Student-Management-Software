@@ -29,10 +29,6 @@ using namespace std;
 #include <fstream>
 #include <vector>
 
-//create a stream to the csv file for testing (this is the included resource file, test.csv)
-ifstream database("test.csv");
-//the stream is called "database"
-
 //include our headers, one for each function
 #include "newStudent.h"
 #include "modifyStudent.h"
