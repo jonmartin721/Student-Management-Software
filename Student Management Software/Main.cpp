@@ -12,16 +12,14 @@ Needed Functions (as headers)
 - view all students (Ali)
 - log in as admin (Jon)
 
-Modify the .h file with the corresponding function assigned to you. Use the test.csv file to test your functions if you
+Modify the .cpp file with the corresponding function assigned to you. Use the test.csv file to test your functions if you
 have a function that would use a database. If you have a module that would need to modify the student class or this main.cpp file,
 make a pull request so that we can make sure it will work.
 
 Remember, we build this part first as if it is our actual program, then we
-develop the real modules after and incorporate them.
+develop the real modules after and incorporate them into this shell.
 
 */
-
-using namespace std;
 
 //include common libraries
 #include <iostream>
@@ -40,20 +38,23 @@ using namespace std;
 //include the student class (is it's own header file)
 #include "studentclass.h"
 
+using namespace std;
+
 //initialize some variables to help with the menu
 int choice = 0;			//by default they choose 0
-bool exitflag = false;	//this is a flag that is triggered when the user wants to exit from the admin menu
+bool exitFlag = false;	//this is a flag that is triggered when the user wants to exit from the admin menu
 
 //prototype adminmenu function from adminLogin.h
 void adminmenu();
 bool deleteStudent(const unsigned long studentID);
 bool modifyStudent(const unsigned long studentID);
 bool newStudent();
+bool admin;
 Student searchStudent(const unsigned long studentID);
 
 int main()
 {
-	if (exitflag == true) //if they wanted to exit from admin menu
+	if (exitFlag == true) //if they wanted to exit from admin menu
 	{
 		return 0;
 	}
@@ -181,7 +182,7 @@ void adminmenu()
 
 	else if (choice == 4) //if they choose to Exit SRMS
 	{
-		exitflag = true;
+		exitFlag = true;
 		main();			//Exit SRMS
 	}
 
