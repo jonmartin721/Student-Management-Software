@@ -74,7 +74,7 @@ int main()
 	cout << "\nChoice: ";
 	cin >> choice;
 
-	
+
 	//data validation with while loop
 
 	while (choice < 1 || choice > 4)
@@ -91,11 +91,11 @@ int main()
 	}
 
 	//start analyzing choices after validation passes
-	
+
 	if (choice == 1)		//if they choose to login as admin
 	{
 		admin = adminLogin();	//go to the adminLogin() function
-		
+
 		if (admin == true)		//if they got the password right
 		{
 			adminmenu();		//take them to the full menu
@@ -163,7 +163,7 @@ void adminmenu()
 		cout << "\nChoice: ";
 		cin >> choice;
 	}
-	
+
 	//start analyzing choices after validation check
 
 	if (choice == 1)		//if they choose to logout from admin
