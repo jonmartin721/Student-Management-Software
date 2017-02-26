@@ -44,14 +44,6 @@ using namespace std;
 int choice = 0;			//by default they choose 0
 bool exitFlag = false;	//this is a flag that is triggered when the user wants to exit from the admin menu
 
-//prototype adminmenu function from adminLogin.h
-void adminmenu();
-bool deleteStudent(const unsigned long studentID);
-bool modifyStudent(const unsigned long studentID);
-bool newStudent();
-bool admin;
-Student searchStudent(const unsigned long studentID);
-
 int main()
 {
 	if (exitFlag == true) //if they wanted to exit from admin menu
