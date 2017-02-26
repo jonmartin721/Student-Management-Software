@@ -8,6 +8,7 @@
 #include <string>
 
 //include the student class (is it's own header file)
+#include "studentClass.h"
 
 //include our headers, one for each function
 #include "newStudent.h"
