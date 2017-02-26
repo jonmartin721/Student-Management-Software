@@ -2,7 +2,7 @@
 
 using namespace std;
 
-bool deleteStudent(unsigned long studentID)
+bool deleteStudent()
 {
 	UNIMPLEMENTED;
 	return true;

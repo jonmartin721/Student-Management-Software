@@ -2,7 +2,7 @@
 
 using namespace std;
 
-bool modifyStudent(unsigned long studentID)
+bool modifyStudent()
 {
 	UNIMPLEMENTED;
 	return true;
