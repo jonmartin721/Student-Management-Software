@@ -32,17 +32,33 @@
     <None Include="test.csv" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\adminLogin.cpp" />
-    <ClCompile Include="src\deleteStudent.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\modifyStudent.cpp" />
-    <ClCompile Include="src\newStudent.cpp" />
-    <ClCompile Include="src\searchStudent.cpp" />
+    <ClCompile Include="src\adminLogin.cpp">
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\deleteStudent.cpp">
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\modifyStudent.cpp">
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\newStudent.cpp">
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\searchStudent.cpp">
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="src\stdafx.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\studentClass.cpp" />
-    <ClCompile Include="src\viewStudents.cpp" />
+    <ClCompile Include="src\studentClass.cpp">
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\viewStudents.cpp">
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3D10C2AC-920F-4A50-B472-7DB7B80A5F7A}</ProjectGuid>
@@ -89,7 +105,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MultiProcessorCompilation Condition="'$(Configuration)'=='Release'">true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
