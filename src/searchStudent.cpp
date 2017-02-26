@@ -7,5 +7,6 @@ Student default;
 
 Student searchStudent(unsigned long studentID)
 {
+	UNIMPLEMENTED;
 	return default;
 }
