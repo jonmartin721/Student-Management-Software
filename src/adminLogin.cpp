@@ -11,13 +11,13 @@ bool adminLogin()
 		string password;
 		getline(cin, password);
 
-		//testing to see if the password matches
+											//testing to see if the password matches
 
-		if (password == "")		//if they want to go back to the main menu
+		if (password == "")					//if they want to go back to the main menu
 		{
 			return false;						//take them back
 		}
-		else if (password == DEFAULT_ADMIN_PASSWORD)	//if they got the password correct
+		else if (password == DEFAULT_ADMIN_PASSWORD)		//if they got the password correct
 		{
 			return true;
 		}
