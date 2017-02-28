@@ -25,7 +25,7 @@ develop the real modules after and incorporate them into this shell.
 
 using namespace std;
 
-SRMS_OPERATION displayGuestMenu()
+SIMS_OPERATION displayGuestMenu()
 {
 	int option = 0;
 	while (true)
@@ -54,7 +54,7 @@ SRMS_OPERATION displayGuestMenu()
 	}
 }
 
-SRMS_OPERATION displayAdminMenu()
+SIMS_OPERATION displayAdminMenu()
 {
 	int option = 0;
 	while (true)
@@ -66,7 +66,7 @@ SRMS_OPERATION displayAdminMenu()
 		cout << "4. Delete Student" << endl;
 		cout << "5. Modify Student" << endl;
 		cout << "6. New Student" << endl;
-		cout << "0. Exit SRMS" << endl;
+		cout << "0. Exit SIMS" << endl;
 		cout << "Choice: ";
 		cin >> option;
 
@@ -92,9 +92,9 @@ SRMS_OPERATION displayAdminMenu()
 	}
 }
 
-SRMS_OPERATION displayMenu(LPSRMS_USER_TOKEN lpToken)
+SIMS_OPERATION displayMenu(LPSIMS_USER_TOKEN lpToken)
 {
-	cout << "Student Records Management System" << endl;
+	cout << "Student Records Information System" << endl;
 	switch (*lpToken)
 	{
 	case GUEST:
@@ -118,7 +118,7 @@ SRMS_OPERATION displayMenu(LPSRMS_USER_TOKEN lpToken)
 
 int main()
 {
-	SRMS_USER_TOKEN Token = GUEST;
+	SIMS_USER_TOKEN Token = GUEST;
 
 	while (true)
 	{
@@ -168,7 +168,7 @@ int main()
 		}
 		case EXIT:
 		{
-			return 0;	//Exit SRMS
+			return 0;	//Exit SIMS
 		}
 		}
 

@@ -21,7 +21,7 @@ vector<Student> viewStudents()
 	const char separator = ' ';
 	const int nameWidth = 12;
 	//Outputs table Name
-	cout << "Student Records Management System: View All Students" << endl << endl;
+	cout << "Student Records Information System: View All Students" << endl << endl;
 	//outputs headers
 	cout << setw(nameWidth) << setfill(separator) << "No." << " ";
 	cout << setw(nameWidth) << setfill(separator) << "ID" << " ";

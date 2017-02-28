@@ -23,7 +23,7 @@ typedef enum
 	GUEST,
 	USER,
 	ADMIN,
-}SRMS_USER_TOKEN, *LPSRMS_USER_TOKEN;
+}SIMS_USER_TOKEN, *LPSIMS_USER_TOKEN;
 
 typedef enum
 {
@@ -35,7 +35,7 @@ typedef enum
 	NEW_STUDENT,
 	DELETE_STUDENT,
 	MODIFY_STUDENT,
-}SRMS_OPERATION, *LPSRMS_OPERATION;
+}SIMS_OPERATION, *LPSIMS_OPERATION;
 
 #ifdef _DEBUG
 #define DPRINT(s) std::cout << s << std::endl;
