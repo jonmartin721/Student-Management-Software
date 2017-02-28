@@ -33,9 +33,13 @@ vector<Student> viewStudents()
 	cout << setw(nameWidth) << setfill(separator) << "Class 2" << " ";
 	cout << setw(nameWidth) << setfill(separator) << "Class 3" << " ";
 	cout << setw(nameWidth) << setfill(separator) << "Class 4" << " ";
+	cout << setw(nameWidth) << setfill(separator) << "Grade 1" << " ";
+	cout << setw(nameWidth) << setfill(separator) << "Grade 2" << " ";
+	cout << setw(nameWidth) << setfill(separator) << "Grade 3" << " ";
+	cout << setw(nameWidth) << setfill(separator) << "Grade 4" << " ";
 	cout << setw(nameWidth) << setfill(separator) << "GPA" << " ";
 	cout << endl;
-	cout << "-----------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+	cout << "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 	//loops until the end of the file
 	
 	while (!database.eof()) {
@@ -63,7 +67,7 @@ vector<Student> viewStudents()
 		getline(database, line, ',');
 		default.semesterEnrolled= line;
 		cout << setw(nameWidth) << setfill(separator) << default.semesterEnrolled << " ";
-		//clears out previours student classes
+		//clears out previous student classes
 		default.classes.clear();
 		//Classes 1-4
 		for (int i = 0; i < 4; i++)
@@ -72,11 +76,26 @@ vector<Student> viewStudents()
 			getline(database, line, ',');
 			if (line == "")
 			{
-				line = "NULL";
+				line = "-";
 			}
 			default.classes.push_back(line);
 			cout << setw(nameWidth) << setfill(separator) << default.classes[i] << " ";
 		
+		}
+		//clears out previours student grades
+		default.classGrades.clear();
+		//Class Grades 1-4
+		for (int i = 0; i < 4; i++)
+		{
+
+			getline(database, line, ',');
+			if (line == "")
+			{
+				line = "-";
+			}
+			default.classGrades.push_back(line);
+			cout << setw(nameWidth) << setfill(separator) << default.classGrades[i] << " ";
+
 		}
 
 		//GPA
