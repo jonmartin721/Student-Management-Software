@@ -30,12 +30,12 @@ SIMS_OPERATION displayGuestMenu()
 	int option = 0;
 	while (true)
 	{
-		cout << "Welcome User, please choose an option." << endl;
-		cout << "1. Login as Admin" << endl;
+		cout << "\nWelcome User, please choose an option." << endl;
+		cout << "\n1. Login as Admin" << endl;
 		cout << "2. Search for Student" << endl;
 		cout << "3. View all Student Records" << endl;
 		cout << "0. Exit" << endl;
-		cout << "Choice: ";
+		cout << "\nChoice: ";
 		cin >> option;
 
 		switch (option)
@@ -59,15 +59,15 @@ SIMS_OPERATION displayAdminMenu()
 	int option = 0;
 	while (true)
 	{
-		cout << "Welcome Admin, please choose an option." << endl;
-		cout << "1. Logout of Admin" << endl;
+		cout << "\nWelcome Admin, please choose an option." << endl;
+		cout << "\n1. Logout of Admin" << endl;
 		cout << "2. Search for Student" << endl;
 		cout << "3. View all Student Records" << endl;
 		cout << "4. Delete Student" << endl;
 		cout << "5. Modify Student" << endl;
 		cout << "6. New Student" << endl;
 		cout << "0. Exit SIMS" << endl;
-		cout << "Choice: ";
+		cout << "\nChoice: ";
 		cin >> option;
 
 		switch (option)
