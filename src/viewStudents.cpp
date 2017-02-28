@@ -42,6 +42,7 @@ vector<Student> viewStudents()
 	cout << "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 	//loops until the end of the file
 	
+	//while there is more data to read in the file
 	while (!database.eof()) {
 		// read a string until the next comma
 		//row line
