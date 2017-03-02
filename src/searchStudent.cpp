@@ -5,7 +5,7 @@ using namespace std;
 Student searchStudent()
 {
 	system("cls");
-	Student default;
+void searchStudent()
 	int choice;
 	vector<Student> Students = db.GetItems();
 	//Outputs table Name
@@ -50,5 +50,4 @@ Student searchStudent()
 	{
 		cout << "invalid option!" << endl;
 	}
-	return default;
 }
