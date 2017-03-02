@@ -40,10 +40,6 @@ Student searchStudent()
 				}
 				cout << i->GPA << endl;
 			}
-			else
-			{
-				cout << "No student record with that ID" << endl;
-			}
 		}
 
 	}
