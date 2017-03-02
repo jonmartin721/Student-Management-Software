@@ -101,37 +101,37 @@ string Student::GetLastName()
 
 string Student::GetFirstName()
 {
-	return string();
+	return firstName;
 }
 
 string Student::GetUserName()
 {
-	return string();
+	return userName;
 }
 
 string Student::GetSemesterEnrolled()
 {
-	return string();
+	return semesterEnrolled;
 }
 
 unsigned long Student::GetStudentID()
 {
-	return 0;
+	return studentID;
 }
 
 vector<string> Student::GetClasses()
 {
-	return vector<string>();
+	return classes;
 }
 
 vector<string> Student::GetClassGrades()
 {
-	return vector<string>();
+	return classGrades;
 }
 
 float Student::GetGPA()
 {
-	return 0.0f;
+	return gpa;
 }
 
 void Student::Print()
