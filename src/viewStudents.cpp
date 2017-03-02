@@ -60,8 +60,6 @@ void viewStudents()
 			cout << setw(nameWidth) << setfill(separator) << i->classes[j] << " ";
 		
 		}
-		//clears out previours student grades
-		default.classGrades.clear();
 		//Class Grades 1-4
 		for (int k = 0; k < i->classGrades.size(); k++)
 		{
