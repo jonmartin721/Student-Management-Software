@@ -12,7 +12,7 @@ void viewStudents()
 	//defines Student Class default
 	Student default;
 	//Vector of class default
-	vector<Student> allStudents = populateStudents();
+	vector<Student> allStudents = db.GetItems();
 	//string manipulators for ouput 
 	const char separator = ' ';
 	const int nameWidth = 12;
@@ -44,31 +44,31 @@ void viewStudents()
 		//row line
 		cout << setw(nameWidth) << setfill(separator) << row << " ";
 		//ID
-		cout << setw(nameWidth) << setfill(separator) << i->studentID << " ";
+		cout << setw(nameWidth) << setfill(separator) << i->GetStudentID() << " ";
 		//Username
-		cout << setw(nameWidth) << setfill(separator) << i->username << " ";
+		cout << setw(nameWidth) << setfill(separator) << i->GetUserName() << " ";
 		//First Name
-		cout << setw(nameWidth) << setfill(separator) << i->firstName << " ";
+		cout << setw(nameWidth) << setfill(separator) << i->GetFirstName() << " ";
 		//Last Name
-		cout << setw(nameWidth) << setfill(separator) << i->lastName << " ";
+		cout << setw(nameWidth) << setfill(separator) << i->GetLastName() << " ";
 		//Semester Enrolled
-		cout << setw(nameWidth) << setfill(separator) << i->semesterEnrolled << " ";
+		cout << setw(nameWidth) << setfill(separator) << i->GetSemesterEnrolled() << " ";
 		//Classes 1-4
-		for (int j = 0; j <  i->classes.size(); j++)
+		for (int j = 0; j <  i->GetClasses().size(); j++)
 		{
 
-			cout << setw(nameWidth) << setfill(separator) << i->classes[j] << " ";
+			cout << setw(nameWidth) << setfill(separator) << i->GetClasses()[j] << " ";
 		
 		}
 		//Class Grades 1-4
-		for (int k = 0; k < i->classGrades.size(); k++)
+		for (int k = 0; k < i->GetClassGrades().size(); k++)
 		{
-			cout << setw(nameWidth) << setfill(separator) << i->classGrades[k] << " ";
+			cout << setw(nameWidth) << setfill(separator) << i->GetClassGrades()[k] << " ";
 
 		}
 
 		//GPA
-		cout << setw(nameWidth) << setfill(separator) << i->GPA << " ";
+		cout << setw(nameWidth) << setfill(separator) << i->GetGPA() << " ";
 		cout << endl;
 		
 		row++;

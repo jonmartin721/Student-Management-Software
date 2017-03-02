@@ -25,6 +25,8 @@ develop the real modules after and incorporate them into this shell.
 
 using namespace std;
 
+Database<Student> db("test.csv");
+
 SIMS_OPERATION displayGuestMenu()
 {
 	int option = 0;
