@@ -7,7 +7,8 @@ Student searchStudent()
 	system("cls");
 	Student default;
 	int choice;
-	vector<Student> Students = populateStudents();
+	Database<Student> db("test.csv");
+	vector<Student> Students = db.GetItems();
 	//Outputs table Name
 	cout << "Student Records Information System: Search Student Records" << endl;
 	cout << endl;

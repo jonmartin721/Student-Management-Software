@@ -12,7 +12,8 @@ void viewStudents()
 	//defines Student Class default
 	Student default;
 	//Vector of class default
-	vector<Student> allStudents = populateStudents();
+	Database<Student> db("test.csv");
+	vector<Student> allStudents = db.GetItems();
 	//string manipulators for ouput 
 	const char separator = ' ';
 	const int nameWidth = 12;

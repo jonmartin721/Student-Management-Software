@@ -19,7 +19,6 @@
 #include "searchStudent.h"
 #include "viewStudents.h"
 #include "adminLogin.h"
-#include "populateStudents.h"
 
 
 typedef enum

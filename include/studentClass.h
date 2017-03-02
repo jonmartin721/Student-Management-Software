@@ -39,5 +39,47 @@ public:
 	float GetGPA();
 
 	void Print();
+};
 
+template <class T>
+class Database
+{
+public:
+	vector<T> Items;
+public:
+	vector<T> GetItems()
+	{
+		return Items;
+	}
+
+	bool AddItem(const T NewItem)
+	{
+		Items.push_back(NewItem);
+		return true;
+	}
+
+	bool ImportCSV(const char * FileName)
+	{
+		ifstream File;
+		File.open(FileName);
+
+		while (!File.eof())
+		{
+			string Record;
+			getline(File, Record);
+			if (Record == "")
+			{
+				break;
+			}
+			T NewItem(Record);
+			AddItem(Record);
+		}
+
+		return true;
+	}
+
+	Database(const char * FileName)
+	{
+		ImportCSV(FileName);
+	}
 };
