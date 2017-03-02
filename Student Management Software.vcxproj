@@ -27,15 +27,11 @@
     <ClInclude Include="include\stdafx.h" />
     <ClInclude Include="include\studentClass.h" />
     <ClInclude Include="include\viewStudents.h" />
-    <ClInclude Include="include\populateStudents.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="test.csv" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\populateStudents.cpp">
-      <PrecompiledHeader>Use</PrecompiledHeader>
-    </ClCompile>
     <ClCompile Include="src\adminLogin.cpp">
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>

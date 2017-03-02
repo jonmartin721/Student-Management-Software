@@ -2,12 +2,25 @@
 
 using namespace std;
 
-Student searchStudent()
+int searchStudentByID(unsigned long ID)
+{
+	vector<Student> Students = db.GetItems();
+	for (int i = 0; i < Students.size(); i++)
+	{
+		if (ID == Students[i].GetStudentID())
+		{
+			return i;
+		}
+	}
+
+	return -1;
+}
+
+void searchStudent()
 {
 	system("cls");
-	Student default;
 	int choice;
-	vector<Student> Students = populateStudents();
+	vector<Student> Students = db.GetItems();
 	//Outputs table Name
 	cout << "Student Records Information System: Search Student Records" << endl;
 	cout << endl;
@@ -19,29 +32,12 @@ Student searchStudent()
 	cin >> choice;
 	if (choice == 1)
 	{
-		long int id;
+		unsigned long id;
 		cout << "Enter the ID you want to lookup: ";
 		cin >> id;
 		cout << endl;
-		for (auto i = Students.begin(); i != Students.end(); i++)
-		{
-			if (id == i->studentID)
-			{
-				cout << i->studentID << " " << i->username << " " << i->firstName << " " << i->lastName << " " << i->semesterEnrolled << " ";
-				//Classes 1-4
-				for (int j = 0; j < i->classes.size(); j++)
-				{
-					cout << i->classes[j] << " ";
-				}
-				//Class Grades 1-4
-				for (int k = 0; k < i->classGrades.size(); k++)
-				{
-					cout << i->classGrades[k] << " ";
-				}
-				cout << i->GPA << endl;
-			}
-		}
-
+		
+		db.GetItems()[searchStudentByID(id)].Print();
 	}
 	else if (choice == 2)
 	{
@@ -61,5 +57,4 @@ Student searchStudent()
 	{
 		cout << "invalid option!" << endl;
 	}
-	return default;
 }

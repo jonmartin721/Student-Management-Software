@@ -6,6 +6,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <sstream>
 #include <conio.h>
 
 //include the student class (is it's own header file)
@@ -18,8 +19,8 @@
 #include "searchStudent.h"
 #include "viewStudents.h"
 #include "adminLogin.h"
-#include "populateStudents.h"
 
+extern Database<Student> db;
 
 typedef enum
 {
