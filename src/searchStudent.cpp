@@ -9,11 +9,12 @@ Student searchStudent()
 	int choice;
 	vector<Student> Students = populateStudents();
 	//Outputs table Name
-	cout << "Student Records Information System: Search Student Records" << endl << endl;
+	cout << "Student Records Information System: Search Student Records" << endl;
+	cout << endl;
 	cout << "Types of Searches:" << endl;
-	cout << "1 - ID " << endl;
-	cout << "2 - Username " << endl;
-	cout << "3 - Name " << endl;
+	cout << "1. ID " << endl;
+	cout << "2. Username " << endl;
+	cout << "3. Name " << endl;
 	cout << "What type of search are you looking for? ";
 	cin >> choice;
 	if (choice == 1)
