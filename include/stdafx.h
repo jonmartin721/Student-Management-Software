@@ -20,6 +20,7 @@
 #include "viewStudents.h"
 #include "adminLogin.h"
 
+extern Database<Student> db;
 
 typedef enum
 {
