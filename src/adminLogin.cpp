@@ -1,5 +1,5 @@
 #include "stdafx.h"
-
+#include <conio.h>
 using namespace std;
 
 bool adminLogin()
@@ -7,10 +7,24 @@ bool adminLogin()
 	cin.ignore();							//flushes the input stream so that getline starts fresh
 	for (int i = 0; i < MAX_PASSWORD_ATTEMPT; i++)
 	{
-		cout << "Please enter the password, or empty line to go back: ";
+		cout << "Please enter the password, or empty line to go back: " << endl;
 		string password;
-		getline(cin, password);
+		//getline(cin, password);
+		char ch;
+		ch = _getch();
+		while (ch != 13) {//character 13 is enter
+			if (ch == 8 || ch == 127)
+			{
+				cout << '\b' << " " << '\b';
+				ch = _getch();
 
+			}
+			else {
+				password.push_back(ch);
+				cout << '*';
+				ch = _getch();
+			}
+		}
 											//testing to see if the password matches
 
 		if (password == "")					//if they want to go back to the main menu
