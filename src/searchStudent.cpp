@@ -2,10 +2,23 @@
 
 using namespace std;
 
-Student searchStudent()
+int searchStudentByID(unsigned long ID)
+{
+	vector<Student> Students = db.GetItems();
+	for (int i = 0; i < Students.size(); i++)
+	{
+		if (ID == Students[i].GetStudentID())
+		{
+			return i;
+		}
+	}
+
+	return -1;
+}
+
+void searchStudent()
 {
 	system("cls");
-void searchStudent()
 	int choice;
 	vector<Student> Students = db.GetItems();
 	//Outputs table Name
@@ -23,14 +36,8 @@ void searchStudent()
 		cout << "Enter the ID you want to lookup: ";
 		cin >> id;
 		cout << endl;
-		for (auto i = Students.begin(); i != Students.end(); i++)
-		{
-			if (id == i->GetStudentID())
-			{
-				i->Print();
-			}
-		}
-
+		
+		db.GetItems()[searchStudentByID(id)].Print();
 	}
 	else if (choice == 2)
 	{
