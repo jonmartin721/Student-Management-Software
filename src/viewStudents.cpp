@@ -12,9 +12,7 @@ void viewStudents()
 	//defines Student Class default
 	Student default;
 	//Vector of class default
-	vector<Student> allStudents;
-	//string to store read line from file
-	string line;
+	vector<Student> allStudents = populateStudents();
 	//string manipulators for ouput 
 	const char separator = ' ';
 	const int nameWidth = 12;
@@ -46,49 +44,33 @@ void viewStudents()
 		//row line
 		cout << setw(nameWidth) << setfill(separator) << row << " ";
 		//ID
-		long int id = stol(line.c_str());
 		cout << setw(nameWidth) << setfill(separator) << i->studentID << " ";
 		//Username
-		cout << setw(nameWidth) << setfill(separator) << default.username << " ";
+		cout << setw(nameWidth) << setfill(separator) << i->username << " ";
 		//First Name
-		cout << setw(nameWidth) << setfill(separator) << default.firstName << " ";
+		cout << setw(nameWidth) << setfill(separator) << i->firstName << " ";
 		//Last Name
-		cout << setw(nameWidth) << setfill(separator) << default.lastName << " ";
+		cout << setw(nameWidth) << setfill(separator) << i->lastName << " ";
 		//Semester Enrolled
-		cout << setw(nameWidth) << setfill(separator) << default.semesterEnrolled << " ";
-		//clears out previous student classes
-		default.classes.clear();
+		cout << setw(nameWidth) << setfill(separator) << i->semesterEnrolled << " ";
 		//Classes 1-4
-		for (int i = 0; i < 4; i++)
+		for (int j = 0; j < 4; j++)
 		{
 
-			if (line == "")
-			{
-				line = "-";
-			}
-			default.classes.push_back(line);
-			cout << setw(nameWidth) << setfill(separator) << default.classes[i] << " ";
+			cout << setw(nameWidth) << setfill(separator) << i->classes[j] << " ";
 		
 		}
 		//clears out previours student grades
 		default.classGrades.clear();
 		//Class Grades 1-4
-		for (int i = 0; i < 4; i++)
+		for (int k = 0; k < 4; k++)
 		{
-
-			if (line == "")
-			{
-				line = "-";
-			}
-			default.classGrades.push_back(line);
-			cout << setw(nameWidth) << setfill(separator) << default.classGrades[i] << " ";
+			cout << setw(nameWidth) << setfill(separator) << i->classGrades[k] << " ";
 
 		}
 
 		//GPA
-		float gpa = stof(line.c_str());
-		default.GPA = gpa;
-		cout << setw(nameWidth) << setfill(separator) << default.GPA << " ";
+		cout << setw(nameWidth) << setfill(separator) << i->GPA << " ";
 		cout << endl;
 
 		allStudents.push_back(default);
