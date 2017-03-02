@@ -25,20 +25,9 @@ Student searchStudent()
 		cout << endl;
 		for (auto i = Students.begin(); i != Students.end(); i++)
 		{
-			if (id == i->studentID)
+			if (id == i->GetStudentID())
 			{
-				cout << i->studentID << " " << i->userName << " " << i->firstName << " " << i->lastName << " " << i->semesterEnrolled << " ";
-				//Classes 1-4
-				for (int j = 0; j < i->classes.size(); j++)
-				{
-					cout << i->classes[j] << " ";
-				}
-				//Class Grades 1-4
-				for (int k = 0; k < i->classGrades.size(); k++)
-				{
-					cout << i->classGrades[k] << " ";
-				}
-				cout << i->gpa << endl;
+				i->Print();
 			}
 		}
 

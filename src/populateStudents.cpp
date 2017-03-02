@@ -21,21 +21,21 @@ vector<Student> populateStudents()
 		//ID
 		getline(database, line, ',');
 		long int id = stol(line.c_str());
-		default.studentID = id;
+		default.SetStudentID(id);
 		//Username
 		getline(database, line, ',');
-		default.userName = line;
+		default.SetUserName(line);
 		//First Name
 		getline(database, line, ',');
-		default.firstName = line;
+		default.SetFirstName(line);
 		//Last Name
 		getline(database, line, ',');
-		default.lastName = line;
+		default.SetLastName(line);
 		//Semester Enrolled
 		getline(database, line, ',');
-		default.semesterEnrolled = line;
+		default.SetSemesterEnrolled(line);
 		//clears out previous student classes
-		default.classes.clear();
+		default.GetClasses().clear();
 		//Classes 1-4
 		for (int i = 0; i < 4; i++)
 		{
@@ -45,11 +45,11 @@ vector<Student> populateStudents()
 			{
 				line = "-";
 			}
-			default.classes.push_back(line);
+			default.AddClass(line);
 
 		}
 		//clears out previours student grades
-		default.classGrades.clear();
+		default.GetClassGrades().clear();
 		//Class Grades 1-4
 		for (int i = 0; i < 4; i++)
 		{
@@ -59,14 +59,14 @@ vector<Student> populateStudents()
 			{
 				line = "-";
 			}
-			default.classGrades.push_back(line);
+			default.AddClassGrade(line);
 
 		}
 
 		//GPA
 		getline(database, line);
 		float gpa = stof(line.c_str());
-		default.gpa = gpa;
+		default.SetGPA(gpa);
 
 		allStudents.push_back(default);
 	}
