@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include <conio.h>
+
 using namespace std;
 
 bool adminLogin()
