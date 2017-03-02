@@ -58,6 +58,12 @@ public:
 		return true;
 	}
 
+	bool UpdateItem(int Index, const T NewItem)
+	{
+		Items[Index] = NewItem;
+		return true;
+	}
+
 	bool ImportCSV(const char * FileName)
 	{
 		ifstream File;
