@@ -7,7 +7,7 @@ bool adminLogin()
 	cin.ignore();							//flushes the input stream so that getline starts fresh
 	for (int i = 0; i < MAX_PASSWORD_ATTEMPT; i++)
 	{
-		cout << "Please enter the password, or empty line to go back: " << endl;
+		cout << "Please enter the password, or empty line to go back: ";
 		string password;
 		//getline(cin, password);
 		char ch;
