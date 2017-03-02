@@ -2,21 +2,17 @@
 
 using namespace std;
 
-vector<Student> viewStudents()
+void viewStudents()
 {
+
 	system("cls");
 	cin.ignore();
 	//row counter
 	int row = 1;
-	//Openes a filestream database with the test csv file
-	ifstream database;
-	database.open("test.csv");
 	//defines Student Class default
 	Student default;
 	//Vector of class default
-	vector<Student> allStudents;
-	//string to store read line from file
-	string line;
+	vector<Student> allStudents = populateStudents();
 	//string manipulators for ouput 
 	const char separator = ' ';
 	const int nameWidth = 12;
@@ -43,78 +39,43 @@ vector<Student> viewStudents()
 	//loops until the end of the file
 	
 	//while there is more data to read in the file
-	while (!database.eof()) {
+	for (auto i = allStudents.begin(); i != allStudents.end(); i++) {
 		// read a string until the next comma
 		//row line
 		cout << setw(nameWidth) << setfill(separator) << row << " ";
 		//ID
-		getline(database, line, ',');
-		long int id = stol(line.c_str());
-		default.studentID = id;
-		cout << setw(nameWidth) << setfill(separator) << default.studentID << " ";
+		cout << setw(nameWidth) << setfill(separator) << i->studentID << " ";
 		//Username
-		getline(database, line, ',');
-		default.username = line;
-		cout << setw(nameWidth) << setfill(separator) << default.username << " ";
+		cout << setw(nameWidth) << setfill(separator) << i->username << " ";
 		//First Name
-		getline(database, line, ',');
-		default.firstName = line;
-		cout << setw(nameWidth) << setfill(separator) << default.firstName << " ";
+		cout << setw(nameWidth) << setfill(separator) << i->firstName << " ";
 		//Last Name
-		getline(database, line, ',');
-		default.lastName = line;
-		cout << setw(nameWidth) << setfill(separator) << default.lastName << " ";
+		cout << setw(nameWidth) << setfill(separator) << i->lastName << " ";
 		//Semester Enrolled
-		getline(database, line, ',');
-		default.semesterEnrolled= line;
-		cout << setw(nameWidth) << setfill(separator) << default.semesterEnrolled << " ";
-		//clears out previous student classes
-		default.classes.clear();
+		cout << setw(nameWidth) << setfill(separator) << i->semesterEnrolled << " ";
 		//Classes 1-4
-		for (int i = 0; i < 4; i++)
+		for (int j = 0; j <  i->classes.size(); j++)
 		{
 
-			getline(database, line, ',');
-			if (line == "")
-			{
-				line = "-";
-			}
-			default.classes.push_back(line);
-			cout << setw(nameWidth) << setfill(separator) << default.classes[i] << " ";
+			cout << setw(nameWidth) << setfill(separator) << i->classes[j] << " ";
 		
 		}
-		//clears out previours student grades
-		default.classGrades.clear();
 		//Class Grades 1-4
-		for (int i = 0; i < 4; i++)
+		for (int k = 0; k < i->classGrades.size(); k++)
 		{
-
-			getline(database, line, ',');
-			if (line == "")
-			{
-				line = "-";
-			}
-			default.classGrades.push_back(line);
-			cout << setw(nameWidth) << setfill(separator) << default.classGrades[i] << " ";
+			cout << setw(nameWidth) << setfill(separator) << i->classGrades[k] << " ";
 
 		}
 
 		//GPA
-		getline(database, line);
-		float gpa = stof(line.c_str());
-		default.GPA = gpa;
-		cout << setw(nameWidth) << setfill(separator) << default.GPA << " ";
+		cout << setw(nameWidth) << setfill(separator) << i->GPA << " ";
 		cout << endl;
-
-		allStudents.push_back(default);
 		
 		row++;
 	}
-	database.close();
 	//press enter to go back to menu
 	cout << endl;
 	cout << "Press Enter to return to menu. " << endl;
 	cin.get();
 	system("cls");
-	return allStudents;
 }
