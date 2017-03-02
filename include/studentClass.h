@@ -16,7 +16,7 @@ public:
 	string lastName, firstName, username, semesterEnrolled;
 	unsigned long studentID;
 	vector <string> classes, classGrades;
-	float GPA;
+	float gpa;
 
 	//default constructor
 

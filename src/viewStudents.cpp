@@ -68,7 +68,7 @@ void viewStudents()
 		}
 
 		//GPA
-		cout << setw(nameWidth) << setfill(separator) << i->GPA << " ";
+		cout << setw(nameWidth) << setfill(separator) << i->gpa << " ";
 		cout << endl;
 		
 		row++;

@@ -38,7 +38,7 @@ Student searchStudent()
 				{
 					cout << i->classGrades[k] << " ";
 				}
-				cout << i->GPA << endl;
+				cout << i->gpa << endl;
 			}
 		}
 

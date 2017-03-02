@@ -66,7 +66,7 @@ vector<Student> populateStudents()
 		//GPA
 		getline(database, line);
 		float gpa = stof(line.c_str());
-		default.GPA = gpa;
+		default.gpa = gpa;
 
 		allStudents.push_back(default);
 	}
