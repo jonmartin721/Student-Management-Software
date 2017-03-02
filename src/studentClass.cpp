@@ -2,6 +2,7 @@
 
 Student::Student()
 {
+	UNIMPLEMENTED;
 	firstName = "Jacob";
 	lastName = "Smith";
 	username = "smithj123";
