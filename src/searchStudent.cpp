@@ -19,7 +19,7 @@ Student searchStudent()
 	cin >> choice;
 	if (choice == 1)
 	{
-		long int id;
+		unsigned long id;
 		cout << "Enter the ID you want to lookup: ";
 		cin >> id;
 		cout << endl;
