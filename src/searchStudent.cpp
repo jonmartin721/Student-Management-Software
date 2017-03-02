@@ -48,12 +48,14 @@ Student searchStudent()
 		string username;
 		cout << "Enter the Username you want to lookup: ";
 		cin >> username;
+		FIXME("Implement search based on username.");
 	}
 	else if (choice == 3)
 	{
 		string name;
 		cout << "Enter the Name you want to lookup: ";
 		cin >> name;
+		FIXME("Implement search based on name.");
 	}
 	else
 	{
