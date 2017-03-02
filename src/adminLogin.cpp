@@ -25,6 +25,7 @@ bool adminLogin()
 				ch = _getch();
 			}
 		}
+		cout << endl;
 											//testing to see if the password matches
 
 		if (password == "")					//if they want to go back to the main menu
