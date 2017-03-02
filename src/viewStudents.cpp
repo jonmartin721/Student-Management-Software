@@ -46,7 +46,7 @@ void viewStudents()
 		//ID
 		cout << setw(nameWidth) << setfill(separator) << i->studentID << " ";
 		//Username
-		cout << setw(nameWidth) << setfill(separator) << i->username << " ";
+		cout << setw(nameWidth) << setfill(separator) << i->userName << " ";
 		//First Name
 		cout << setw(nameWidth) << setfill(separator) << i->firstName << " ";
 		//Last Name

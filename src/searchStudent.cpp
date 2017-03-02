@@ -27,7 +27,7 @@ Student searchStudent()
 		{
 			if (id == i->studentID)
 			{
-				cout << i->studentID << " " << i->username << " " << i->firstName << " " << i->lastName << " " << i->semesterEnrolled << " ";
+				cout << i->studentID << " " << i->userName << " " << i->firstName << " " << i->lastName << " " << i->semesterEnrolled << " ";
 				//Classes 1-4
 				for (int j = 0; j < i->classes.size(); j++)
 				{

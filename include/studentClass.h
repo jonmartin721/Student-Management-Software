@@ -13,7 +13,7 @@ public:
 
 	//member variables
 
-	string lastName, firstName, username, semesterEnrolled;
+	string lastName, firstName, userName, semesterEnrolled;
 	unsigned long studentID;
 	vector <string> classes, classGrades;
 	float gpa;

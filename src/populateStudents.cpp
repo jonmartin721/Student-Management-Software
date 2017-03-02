@@ -24,7 +24,7 @@ vector<Student> populateStudents()
 		default.studentID = id;
 		//Username
 		getline(database, line, ',');
-		default.username = line;
+		default.userName = line;
 		//First Name
 		getline(database, line, ',');
 		default.firstName = line;
