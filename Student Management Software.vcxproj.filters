@@ -39,7 +39,7 @@
     <ClInclude Include="include\stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="populateStudents.h">
+    <ClInclude Include="include\populateStudents.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -76,7 +76,7 @@
     <ClCompile Include="src\stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="populateStudents.cpp">
+    <ClCompile Include="src\populateStudents.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

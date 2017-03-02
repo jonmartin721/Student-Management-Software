@@ -54,7 +54,7 @@ void viewStudents()
 		//Semester Enrolled
 		cout << setw(nameWidth) << setfill(separator) << i->semesterEnrolled << " ";
 		//Classes 1-4
-		for (int j = 0; j < 4; j++)
+		for (int j = 0; j <  i->classes.size(); j++)
 		{
 
 			cout << setw(nameWidth) << setfill(separator) << i->classes[j] << " ";
@@ -63,7 +63,7 @@ void viewStudents()
 		//clears out previours student grades
 		default.classGrades.clear();
 		//Class Grades 1-4
-		for (int k = 0; k < 4; k++)
+		for (int k = 0; k < i->classGrades.size(); k++)
 		{
 			cout << setw(nameWidth) << setfill(separator) << i->classGrades[k] << " ";
 
@@ -72,8 +72,6 @@ void viewStudents()
 		//GPA
 		cout << setw(nameWidth) << setfill(separator) << i->GPA << " ";
 		cout << endl;
-
-		allStudents.push_back(default);
 		
 		row++;
 	}
