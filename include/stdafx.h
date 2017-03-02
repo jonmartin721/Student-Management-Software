@@ -6,6 +6,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <sstream>
 #include <conio.h>
 
 //include the student class (is it's own header file)

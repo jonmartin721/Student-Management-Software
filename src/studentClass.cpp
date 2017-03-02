@@ -15,43 +15,38 @@ Student::Student()
 
 Student::Student(string CSVLine)
 {
-	size_t len = strlen(CSVLine.c_str()) + 1;
-	char * Record = (char *) malloc(len);
-	strcpy_s(Record, len, CSVLine.c_str());
-	char * Token = NULL;
-	char * NextToken = NULL;
+	istringstream Record(CSVLine);
+	string Token;
 
-	Token = strtok_s(Record, ",", &NextToken);
+	getline(Record, Token, ',');
 	SetStudentID(stol(Token));
 
-	Token = strtok_s(NULL, ",", &NextToken);
+	getline(Record, Token, ',');
 	SetUserName(Token);
 
-	Token = strtok_s(NULL, ",", &NextToken);
+	getline(Record, Token, ',');
 	SetFirstName(Token);
 
-	Token = strtok_s(NULL, ",", &NextToken);
+	getline(Record, Token, ',');
 	SetLastName(Token);
 
-	Token = strtok_s(NULL, ",", &NextToken);
+	getline(Record, Token, ',');
 	SetSemesterEnrolled(Token);
 
 	for (int i = 0; i < 4; i++)
 	{
-		Token = strtok_s(NULL, ",", &NextToken);
+		getline(Record, Token, ',');
 		AddClass(Token);
 	}
 
 	for (int i = 0; i < 4; i++)
 	{
-		Token = strtok_s(NULL, ",", &NextToken);
+		getline(Record, Token, ',');
 		AddClassGrade(Token);
 	}
 
-	Token = strtok_s(NULL, ",", &NextToken);
+	getline(Record, Token, ',');
 	SetGPA(stof(Token));
-
-	free(Record);
 }
 
 void Student::SetLastName(string LastName)
