@@ -131,16 +131,16 @@ float Student::GetGPA()
 
 void Student::Print()
 {
-	cout << this->studentID << " " << this->userName << " " << this->firstName << " " << this->lastName << " " << this->semesterEnrolled << " ";
+	cout << studentID << " " << userName << " " << firstName << " " << lastName << " " << semesterEnrolled << " ";
 	//Classes 1-4
-	for (int j = 0; j < this->classes.size(); j++)
+	for (int j = 0; j < classes.size(); j++)
 	{
-		cout << this->classes[j] << " ";
+		cout << classes[j] << " ";
 	}
 	//Class Grades 1-4
-	for (int k = 0; k < this->classGrades.size(); k++)
+	for (int k = 0; k < classGrades.size(); k++)
 	{
-		cout << this->classGrades[k] << " ";
+		cout << classGrades[k] << " ";
 	}
-	cout << this->gpa << endl;
+	cout << gpa << endl;
 }
