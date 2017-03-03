@@ -38,14 +38,16 @@ public:
 	vector <string> GetClassGrades();
 	float GetGPA();
 
+	string toString();
 	void Print();
 };
 
 template <class T>
 class Database
 {
-public:
+private:
 	vector<T> Items;
+	string CSV;
 public:
 	vector<T> GetItems()
 	{
@@ -55,19 +57,19 @@ public:
 	bool AddItem(const T NewItem)
 	{
 		Items.push_back(NewItem);
-		return true;
+		return SaveCSV();
 	}
 
 	bool UpdateItem(int Index, const T NewItem)
 	{
 		Items[Index] = NewItem;
-		return true;
+		return SaveCSV();
 	}
 
 	bool ImportCSV(const char * FileName)
 	{
-		ifstream File;
-		File.open(FileName);
+		CSV = FileName;
+		ifstream File(CSV);
 
 		while (!File.eof())
 		{
@@ -78,14 +80,29 @@ public:
 				break;
 			}
 			T NewItem(Record);
-			AddItem(Record);
+			Items.push_back(Record);
 		}
 
+		return true;
+	}
+
+	bool SaveCSV()
+	{
+		ofstream File(CSV);
+		for (auto i = Items.begin(); i < Items.end(); i++)
+		{
+			File << i->toString() << endl;
+		}
 		return true;
 	}
 
 	Database(const char * FileName)
 	{
 		ImportCSV(FileName);
+	}
+
+	~Database()
+	{
+		SaveCSV();
 	}
 };
