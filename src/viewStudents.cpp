@@ -4,9 +4,6 @@ using namespace std;
 
 void viewStudents()
 {
-
-	system("cls");
-	cin.ignore();
 	//row counter
 	int row = 1;
 	//defines Student Class default
@@ -73,9 +70,4 @@ void viewStudents()
 		
 		row++;
 	}
-	//press enter to go back to menu
-	cout << endl;
-	cout << "Press Enter to return to menu. " << endl;
-	cin.get();
-	system("cls");
 }

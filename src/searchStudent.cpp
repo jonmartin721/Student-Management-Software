@@ -18,7 +18,6 @@ int searchStudentByID(unsigned long ID)
 
 void searchStudent()
 {
-	system("cls");
 	int choice;
 	vector<Student> Students = db.GetItems();
 	//Outputs table Name
