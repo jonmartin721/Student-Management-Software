@@ -129,6 +129,14 @@ float Student::GetGPA()
 	return gpa;
 }
 
+string Student::toString()
+{
+	return to_string(studentID) + "," + userName + "," + firstName + "," + lastName + "," + semesterEnrolled + "," +
+		classes[0] + "," + classes[1] + "," + classes[2] + "," + classes[3] + "," +
+		classGrades[0] + "," + classGrades[1] + "," + classGrades[2] + "," + classGrades[3] + "," +
+		to_string(gpa);
+}
+
 void Student::Print()
 {
 	cout << studentID << " " << userName << " " << firstName << " " << lastName << " " << semesterEnrolled << " ";
