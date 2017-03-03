@@ -27,33 +27,45 @@ void searchStudent()
 	cout << "1. ID " << endl;
 	cout << "2. Username " << endl;
 	cout << "3. Name " << endl;
+	cout << "0. Exit " << endl;
 	cout << "What type of search are you looking for? ";
 	cin >> choice;
-	if (choice == 1)
+	switch (choice)
+	{
+	case 1:
 	{
 		unsigned long id;
 		cout << "Enter the ID you want to lookup: ";
 		cin >> id;
 		cout << endl;
-		
+
 		db.GetItems()[searchStudentByID(id)].Print();
+		break;
 	}
-	else if (choice == 2)
+	case 2:
 	{
 		string username;
 		cout << "Enter the Username you want to lookup: ";
 		cin >> username;
 		FIXME("Implement search based on username.");
+		break;
 	}
-	else if (choice == 3)
+	case 3:
 	{
 		string name;
 		cout << "Enter the Name you want to lookup: ";
 		cin >> name;
 		FIXME("Implement search based on name.");
+		break;
 	}
-	else
+	case 0:
+	{
+		return;
+	}
+	default:
 	{
 		cout << "invalid option!" << endl;
+		break;
+	}
 	}
 }
