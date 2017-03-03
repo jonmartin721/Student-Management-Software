@@ -9,7 +9,9 @@ bool adminLogin()
 	{
 		cout << "Please enter the password, or empty line to go back: ";
 		string password;
-		//getline(cin, password);
+		getline(cin, password);
+		/*
+		FIXME("didn't handle backspace")
 		char ch;
 		ch = _getch();
 		while (ch != 13) {//character 13 is enter
@@ -26,6 +28,7 @@ bool adminLogin()
 			}
 		}
 		cout << endl;
+		*/
 											//testing to see if the password matches
 
 		if (password == "")					//if they want to go back to the main menu
