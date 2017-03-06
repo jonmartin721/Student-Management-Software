@@ -50,6 +50,9 @@
     <None Include="test.csv">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="Students.db">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\adminLogin.cpp">
