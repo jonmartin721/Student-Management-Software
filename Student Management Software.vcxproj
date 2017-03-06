@@ -52,7 +52,6 @@
     <ClCompile Include="src\searchStudent.cpp">
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\shell.c" />
     <ClCompile Include="src\sqlite3.c" />
     <ClCompile Include="src\stdafx.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
