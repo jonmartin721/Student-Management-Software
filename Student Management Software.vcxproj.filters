@@ -50,7 +50,7 @@
     <None Include="test.csv">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="Students.db">
+    <None Include="..\..\..\Downloads\Students.db">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
