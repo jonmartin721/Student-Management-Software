@@ -8,6 +8,7 @@
 #include <string>
 #include <sstream>
 #include <conio.h>
+#include "sqlite3.h"
 
 //include the student class (is it's own header file)
 #include "studentClass.h"

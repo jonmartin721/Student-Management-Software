@@ -1,3 +1,4 @@
+#include "stdafx.h"
 /*
 ** 2001 September 15
 **
