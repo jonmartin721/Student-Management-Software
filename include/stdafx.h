@@ -20,6 +20,7 @@
 #include "searchStudent.h"
 #include "viewStudents.h"
 #include "adminLogin.h"
+#include "databaseManager.h"
 
 extern Database<Student> db;
 
