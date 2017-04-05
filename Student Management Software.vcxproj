@@ -29,6 +29,7 @@
     <ClInclude Include="include\stdafx.h" />
     <ClInclude Include="include\studentClass.h" />
     <ClInclude Include="include\viewStudents.h" />
+    <ClInclude Include="include\databaseManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\Downloads\Students.db" />
@@ -61,6 +62,9 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\viewStudents.cpp">
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\databaseManager.cpp">
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>

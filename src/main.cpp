@@ -151,7 +151,8 @@ int main()
 		case VIEW_ALL_RECORD:
 		{
 			//Ali creates this function call and defines the function in viewStudents.h
-			viewStudents();
+			//viewStudents();
+			viewallstudents();
 			break;
 		}
 

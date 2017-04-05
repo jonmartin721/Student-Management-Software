@@ -2,3 +2,4 @@
 #include "stdafx.h"
 
 bool openDB();
+int viewallstudents();
