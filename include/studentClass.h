@@ -19,6 +19,8 @@ public:
 	//default constructor
 	Student();
 	Student(string CSVLine);
+	Student(const string& FirstName,const string& LastName, string username, string className,string grade,string instructor);
+	Student(const string& FirstName, const string& LastName, string username);
 
 	void SetLastName(string LastName);
 	void SetFirstName(string FirstName);

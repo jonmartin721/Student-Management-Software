@@ -152,7 +152,7 @@ int main()
 		{
 			//Ali creates this function call and defines the function in viewStudents.h
 			//viewStudents();
-			viewallstudents();
+			populateStudents();
 			break;
 		}
 
