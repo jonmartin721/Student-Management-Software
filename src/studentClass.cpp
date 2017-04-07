@@ -49,6 +49,24 @@ Student::Student(string CSVLine)
 	SetGPA(stof(Token));
 }
 
+Student::Student(const string & FirstName, const string& LastName, string username, string className, string grade, string instructor)
+{
+	lastName = LastName;
+	firstName = FirstName;
+	userName = username;
+	classes.push_back(className);
+	classGrades.push_back(grade);
+
+
+}
+
+Student::Student(const string & FirstName, const string & LastName, string username)
+{
+	lastName = LastName;
+	firstName = FirstName;
+	userName = username;
+}
+
 void Student::SetLastName(string LastName)
 {
 	lastName = LastName;

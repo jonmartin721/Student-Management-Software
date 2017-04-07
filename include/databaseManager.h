@@ -3,3 +3,4 @@
 
 bool openDB();
 int viewallstudents();
+bool populateStudents();
