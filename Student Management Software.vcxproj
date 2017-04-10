@@ -32,9 +32,6 @@
     <ClInclude Include="include\databaseManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\Downloads\Students.db" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="src\adminLogin.cpp">
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
