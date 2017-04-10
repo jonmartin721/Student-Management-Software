@@ -1,26 +1,3 @@
-/*CS 3420 Project
-
-Testing commit on new PC.
-
-Shell portion.
-Needed Functions (as headers)
-
-- new student (Javier)
-- modify student (Yuntian)
-- delete student  (Nhu)
-- search student (Jon)
-- view all students (Ali)
-- log in as admin (Jon)
-
-Modify the .cpp file with the corresponding function assigned to you. Use the test.csv file to test your functions if you
-have a function that would use a database. If you have a module that would need to modify the student class or this main.cpp file,
-make a pull request so that we can make sure it will work.
-
-Remember, we build this part first as if it is our actual program, then we
-develop the real modules after and incorporate them into this shell.
-
-*/
-
 #include "stdafx.h"
 
 using namespace std;
