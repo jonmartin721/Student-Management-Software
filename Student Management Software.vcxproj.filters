@@ -50,9 +50,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="test.csv">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="..\..\..\Downloads\Students.db">
       <Filter>Resource Files</Filter>
     </None>

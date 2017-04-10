@@ -33,7 +33,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\Downloads\Students.db" />
-    <None Include="test.csv" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\adminLogin.cpp">
