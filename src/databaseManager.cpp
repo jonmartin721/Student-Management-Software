@@ -58,6 +58,7 @@ static int callback(void *data, int argc, char **argv, char **azColName) {
 //}
 
 
+//This function brings the student information together from multiple tables
 bool populateStudents()
 {
 	sqlite3 *db;
