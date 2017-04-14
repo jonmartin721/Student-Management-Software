@@ -10,8 +10,6 @@
 #include <conio.h>
 #include "sqlite3.h"
 
-//include the student class (is it's own header file)
-#include "studentClass.h"
 
 //include our headers, one for each function
 #include "newStudent.h"
@@ -21,6 +19,8 @@
 #include "viewStudents.h"
 #include "adminLogin.h"
 #include "databaseManager.h"
+#include "userClass.h"
+#include "studentClass.h"
 
 extern Database<Student> db;
 

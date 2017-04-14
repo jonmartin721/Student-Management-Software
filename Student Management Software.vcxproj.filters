@@ -48,6 +48,9 @@
     <ClInclude Include="include\databaseManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\userClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\adminLogin.cpp">
@@ -81,6 +84,9 @@
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="src\databaseManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\userClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

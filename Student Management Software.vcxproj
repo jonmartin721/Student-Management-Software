@@ -30,6 +30,7 @@
     <ClInclude Include="include\studentClass.h" />
     <ClInclude Include="include\viewStudents.h" />
     <ClInclude Include="include\databaseManager.h" />
+    <ClInclude Include="Include\userClass.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\adminLogin.cpp">
@@ -61,6 +62,9 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\databaseManager.cpp">
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\userClass.cpp">
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
