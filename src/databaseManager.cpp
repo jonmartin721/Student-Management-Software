@@ -77,10 +77,7 @@ bool populateStudents()
 	/* Open database */
 	rc = sqlite3_open(dbName, &db);
 
-	rc = sqlite3_prepare_v2(db,"SELECT a.First_Name , a.Last_Name,a.username, group_concat(c.Name || \" \" || c.CRN) AS"
-		" 'Class Name',group_concat(ca.Grade) AS 'Class Grade', group_concat(c.Instructor) AS Instructor FROM  Students AS a" 
-		"LEFT OUTER JOIN Records AS ca ON ca.username = a.username LEFT OUTER JOIN  Classes AS c ON ca.CRN = c.CRN GROUP"
-		"BY a.Last_Name, a.First_Name, a.username"
+	rc = sqlite3_prepare_v2(db, "SELECT a.First_Name , a.Last_Name,a.username, group_concat(c.Name || \" \" || c.CRN) AS 'Class Name',group_concat(ca.Grade) AS 'Class Grade', group_concat(c.Instructor) AS Instructor FROM  Students AS a LEFT OUTER JOIN Records AS ca ON ca.username = a.username LEFT OUTER JOIN  Classes AS c ON ca.CRN = c.CRN GROUP BY a.Last_Name, a.First_Name, a.username"
 	,
 		-1, &stmt, NULL);
 	if (rc != SQLITE_OK) {
@@ -161,41 +158,41 @@ bool populateStudents()
 
 
 //working on this
-bool populateUsers()
-{
-	sqlite3 *db;
-	char *zErrMsg = 0;
-	int rc;
-	const char* data = "";
-	const char* dbName = "Students.db";
-	vector <Users> userData;
-	sqlite3_stmt *stmt;
-
-	/* Open database */
-	rc = sqlite3_open(dbName, &db);
-
-	rc = sqlite3_prepare_v2(db, "SELECT a.First_Name , a.Last_Name,a.username, group_concat(c.Name || \" \" || c.CRN) AS 'Class Name',group_concat(ca.Grade) AS 'Class Grade', group_concat(c.Instructor) AS Instructor FROM  Students AS a LEFT OUTER JOIN Records AS ca ON ca.username = a.username LEFT OUTER JOIN  Classes AS c ON ca.CRN = c.CRN GROUP  BY a.Last_Name, a.First_Name, a.username"
-		,
-		-1, &stmt, NULL);
-	if (rc != SQLITE_OK) {
-		cerr << "SELECT failed: " << sqlite3_errmsg(db) << endl;
-		return 0; // or throw
-	}
-	while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
-		const char* firstName = reinterpret_cast<const char*>(sfqlite3_column_text(stmt, 0));
-		const char* lastName = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
-		const char* username = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
-		//const char* crn = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
-		const char* classname = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
-		const char* grade = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
-		const char* instructor = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 5));
-		// let's assume some fields can be NULL:
-		UserData.push_back(Student(firstName, lastName, username, classname ? classname : "-", grade ? grade : "-", instructor ? instructor : "-"));
-		//Students.push_back(Student(firstName, lastName,username));
-	}
-	if (rc != SQLITE_DONE) {
-		cerr << "SELECT failed: " << sqlite3_errmsg(db) << endl;
-		// if you return/throw here, don't forget the finalize
-	}
-	sqlite3_finalize(stmt);
-}
+//bool populateusers()
+//{
+//	sqlite3 *db;
+//	char *zerrmsg = 0;
+//	int rc;
+//	const char* data = "";
+//	const char* dbname = "students.db";
+//	vector <users> userdata;
+//	sqlite3_stmt *stmt;
+//
+//	/* open database */
+//	rc = sqlite3_open(dbname, &db);
+//
+//	rc = sqlite3_prepare_v2(db, "select a.first_name , a.last_name,a.username, group_concat(c.name || \" \" || c.crn) as 'class name',group_concat(ca.grade) as 'class grade', group_concat(c.instructor) as instructor from  students as a left outer join records as ca on ca.username = a.username left outer join  classes as c on ca.crn = c.crn group  by a.last_name, a.first_name, a.username"
+//		,
+//		-1, &stmt, null);
+//	if (rc != sqlite_ok) {
+//		cerr << "select failed: " << sqlite3_errmsg(db) << endl;
+//		return 0; // or throw
+//	}
+//	while ((rc = sqlite3_step(stmt)) == sqlite_row) {
+//		//const char* firstname = reinterpret_cast<const char*>(sfqlite3_column_text(stmt, 0));
+//		const char* lastname = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
+//		const char* username = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
+//		//const char* crn = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
+//		const char* classname = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
+//		const char* grade = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
+//		const char* instructor = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 5));
+//		// let's assume some fields can be null:
+//		//userdata.push_back(student(firstname, lastname, username, classname ? classname : "-", grade ? grade : "-", instructor ? instructor : "-"));
+//		//students.push_back(student(firstname, lastname,username));
+//	}
+//	if (rc != sqlite_done) {
+//		cerr << "select failed: " << sqlite3_errmsg(db) << endl;
+//		// if you return/throw here, don't forget the finalize
+//	}
+//	sqlite3_finalize(stmt);
+//}
