@@ -174,7 +174,7 @@ bool populateUsers()
 	/* Open database */
 	rc = sqlite3_open(dbName, &db);
 
-	rc = sqlite3_prepare_v2(db, "SELECT a.First_Name , a.Last_Name,a.username, group_concat(c.Name || \" \" || c.CRN) AS 'Class Name',group_concat(ca.Grade) AS 'Class Grade', group_concat(c.Instructor) AS Instructor FROM  Students AS a LEFT OUTER JOIN Records AS ca ON ca.username = a.username LEFT OUTER JOIN  Classes AS c ON ca.CRN = c.CRN GROUP  BY a.Last_Name, a.First_Name, a.username"
+	rc = sqlite3_prepare_v2(db, "SELECT "
 		,
 		-1, &stmt, NULL);
 	if (rc != SQLITE_OK) {
@@ -199,3 +199,4 @@ bool populateUsers()
 	}
 	sqlite3_finalize(stmt);
 }
+
