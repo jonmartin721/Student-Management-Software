@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "main.h"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ SIMS_OPERATION displayGuestMenu()
 		cout << "1. Login as Admin" << endl;
 		cout << "2. Search for Student" << endl;
 		cout << "3. View all Student Records" << endl;
+		cout << "4. View all User Records" << endl;
 		cout << "0. Exit" << endl;
 		cout << endl;
 		cout << "Choice: ";
@@ -27,6 +29,8 @@ SIMS_OPERATION displayGuestMenu()
 			return SEARCH_STUDENT;
 		case 3:
 			return VIEW_ALL_RECORD;
+		case 4:
+			return VIEW_ALL_USERS;
 		case 0:
 			return EXIT;
 		default:
@@ -35,6 +39,7 @@ SIMS_OPERATION displayGuestMenu()
 	}
 }
 
+//admin menu is kinda depricated right now, there won't be any need for a login in this sense after the initial login screen
 SIMS_OPERATION displayAdminMenu()
 {
 	int option = 0;
@@ -121,34 +126,35 @@ int main()
 		}
 		case SEARCH_STUDENT:
 		{
-			//Jon creates this function call and defines the function in searchStudent.h
 			searchStudent();
 			break;
 		}
 		case VIEW_ALL_RECORD:
 		{
-			//Ali creates this function call and defines the function in viewStudents.h
-			//viewStudents();
 			populateStudents();
+			break;
+		}
+
+		case VIEW_ALL_USERS:
+		{
+			cout << "THis is working";
+			view_users();
 			break;
 		}
 
 		case NEW_STUDENT:
 		{
-			//Javier creates this function call and defines the function in newStudent.h
 			newStudent();
 			break;
 		}
 		case DELETE_STUDENT:
 		{
-			//Nhu creates this function call and defines the function in deleteStudent.h
 			deleteStudent();
 			break;
 		}
 
 		case MODIFY_STUDENT:
 		{
-			//Yuntian creates this function call and defines the function in modifyStudent.h
 			modifyStudent();
 			break;
 		}

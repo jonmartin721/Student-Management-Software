@@ -1,6 +1,7 @@
 #pragma once
+
 #include "stdafx.h"
 
-bool openDB();
-int viewallstudents();
 bool populateStudents();
+void populateUsers();
+void view_users();

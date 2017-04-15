@@ -158,7 +158,7 @@ bool populateStudents()
 
 
 //working on this
-bool populateUsers()
+vector<Users>populateUsers()
 {
 	sqlite3 *db;
 	char *zErrMsg = 0;
@@ -170,30 +170,65 @@ bool populateUsers()
 
 	/* Open database */
 	rc = sqlite3_open(dbName, &db);
-
-	rc = sqlite3_prepare_v2(db, "SELECT "
+	rc = sqlite3_prepare_v2(db, "SELECT username, password, access_type FROM Users"
 		,
 		-1, &stmt, NULL);
 	if (rc != SQLITE_OK) {
 		cerr << "SELECT failed: " << sqlite3_errmsg(db) << endl;
-		return 0; // or throw
 	}
 	while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
-		const char* firstName = reinterpret_cast<const char*>(sfqlite3_column_text(stmt, 0));
-		const char* lastName = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
-		const char* username = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
-		//const char* crn = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
-		const char* classname = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
-		const char* grade = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
-		const char* instructor = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 5));
+
+		const char* username = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
+		const char* password = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
+		const char* access_type = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
+
 		// let's assume some fields can be NULL:
-		UserData.push_back(Student(firstName, lastName, username, classname ? classname : "-", grade ? grade : "-", instructor ? instructor : "-"));
-		//Students.push_back(Student(firstName, lastName,username));
+		userData.push_back(Users(username, password, access_type));
 	}
 	if (rc != SQLITE_DONE) {
 		cerr << "SELECT failed: " << sqlite3_errmsg(db) << endl;
 		// if you return/throw here, don't forget the finalize
 	}
 	sqlite3_finalize(stmt);
+	return userData;
 }
 
+void view_users()
+{
+	vector<Users>userData = populateUsers();
+	//DISPLAYING USERS
+
+	//row counter
+	int row = 1;
+	//defines User Class default
+	Users default;
+	//string manipulators for output 
+	const char separator = ' ';
+	const int fieldWidth = 12;
+	//Outputs table Name
+	cout << "Student Records Information System: View All Users" << endl << endl;
+	//outputs headers
+	cout << setw(fieldWidth) << setfill(separator) << "Username" << " ";
+	cout << setw(fieldWidth) << setfill(separator) << "Password" << " ";
+	cout << setw(fieldWidth) << setfill(separator) << "Access Type" << " ";
+	cout << endl;
+	cout << "------------------------------------------------------------------------------------" << endl;
+
+
+	//loops until the end of the file
+
+	for (auto i = userData.begin(); i != userData.end(); i++) {
+		// read a string until the next comma
+		//row line
+		//Username
+		cout << setw(fieldWidth) << setfill(separator) << i->getType() << " ";
+		//First Name
+		cout << setw(fieldWidth) << setfill(separator) << i->getUsername() << " ";
+		//Last Name
+		cout << setw(fieldWidth) << setfill(separator) << i->getPassword() << " ";
+	}
+
+
+
+	return;
+}

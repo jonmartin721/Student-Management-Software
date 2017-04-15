@@ -31,6 +31,7 @@
     <ClInclude Include="include\viewStudents.h" />
     <ClInclude Include="include\databaseManager.h" />
     <ClInclude Include="Include\userClass.h" />
+    <ClInclude Include="src\main.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\adminLogin.cpp">

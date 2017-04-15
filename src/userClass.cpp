@@ -8,9 +8,16 @@ Users::Users()
 	password = "password";
 }
 
+Users::Users(const string & Username, const string & Password, const string & Access_Type)
+{
+	username = Username;
+	password = Password;
+	access_type = Access_Type;
+}
+
 //setters
 
-void Users::setType (int)
+void Users::setType (string)
 {
 	access_type = access_type;
 }
@@ -25,7 +32,7 @@ void Users::setUsername(string)
 
 //getters
 
-int Users::getType()
+string Users::getType()
 {
 	return access_type;
 }

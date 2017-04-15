@@ -9,8 +9,7 @@ class Users
 {
 private:
 
-	Users();
-	int access_type; 
+	string access_type; 
 	//3 = admin
 	//2 = faculty
 	//1 = student
@@ -22,16 +21,19 @@ private:
 	//password
 
 public:
+
+	Users();
+	Users(const string & Username, const string & Password, const string & Access_Type);
 	
 	//setters
 
-	void setType(int access_type);
+	void setType(string access_type);
 	void setPassword(string password);
 	void setUsername(string username);
 
 	//getters
 
-	int getType();
+	string getType();
 	string getUsername();
 	string getPassword();
 
